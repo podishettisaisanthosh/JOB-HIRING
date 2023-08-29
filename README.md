@@ -1,2 +1,2 @@
 # JOB-HIRING
-JOB HIRING WEBSITE WHICH IS USEFUL TO REMOVE UNEMPLOYMENT
+Job hiring website mainly focus on unemployment
