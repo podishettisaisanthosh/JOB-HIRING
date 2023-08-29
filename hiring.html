@@ -1,0 +1,211 @@
+<html>
+<head>
+    <title>Hire Employee page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        
+body {
+    margin: 0 0 55px 0;
+    
+}
+
+.nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 55px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    display: flex;
+    overflow-x: auto;
+}
+
+.nav__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    min-width: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: sans-serif;
+    font-size: 13px;
+    color: #444444;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.nav__link:hover {
+    background-color: #eeeeee;
+}
+
+.nav__link--active {
+    color: #009578;
+}
+
+.nav__icon {
+    font-size: 18px;
+}
+
+        body{
+            background-color: pink;
+        }
+        .noc{
+            border-style:groove;
+            border-color:rgba(red, green, blue, alpha)
+           
+        }
+        .noc{
+            background-color: skyblue;
+            border-color:purple;
+            margin-top: 50;
+margin-left: 35;
+margin-bottom: 100;
+margin-right: 35;
+text-align:center;
+    border-radius: 35px;
+        }
+
+
+        .M{
+            background-color:skyblue;
+    border-style:ridge;
+    text-align:center;
+    border-style:inset;
+    border-color:rgb(#ff00007c, rgb(132, 230, 132), rgb(20, 20, 70));
+    text-align:center;
+    border-style:inset;
+    background-image: url(hg.gif);
+background-color:skyblue;
+
+font-family: Arial, Helvetica, sans-serif;
+
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  box-shadow: 5px 5px 8px orangered, 10px 10px 8px lightgray,10px 10px 8px green;
+}
+
+
+@font-face {
+   font-family: myFirstFont;
+   src: url(sansation_light.woff);
+}
+
+* {
+   font-family: myFirstFont;
+}
+
+.f1{
+    background-image: url("ved2.gif");
+}
+    </style>
+</head>
+<body>
+    <div  class="M">
+        <h1 ><font color="yellow">JOB SEEKER</font></h1>
+
+    
+      </div>
+    <nav class="nav">
+        <a href="lone.html" class="nav__link">
+            <i style="font-size:24px" class="fa">&#xf156;</i>
+            <span class="nav__text">Hire Employee</span>
+        </a>
+
+        <a href="taker.html" class="nav__link">
+            <i style="font-size:24px" class="fa">&#xf2bb;</i>
+
+          <span class="nav__text">DASHBOARD</span>
+        </a>
+        <a href="homepage.html" class="nav__link">
+            <i class="fa fa-home" style="font-size:30px"></i>
+          <span class="nav__text" >HOME</span>
+        
+        </a>
+      </nav>
+      <br>
+      <br>
+      <P>FILL THE DETAILS AND SUBMIT WHAT ARE THE QUALIFICATIONS NEEDED TO HIRE A EMPLOYEE FOR YOUR WORK</P>
+    <form class="f1">
+        <br>
+        <br>
+        <br>
+        <input type="text" placeholder="Job Name" id="name">
+        <br>
+        <br>
+        <br>
+        <input type="text" placeholder="salary/stipend(month)" id="salary">
+        <br>
+        <br>
+        <br>
+        <input type="text" placeholder="part time/full time" id="part">
+        <br>
+        <br>
+        <br>
+        <input type="text" placeholder="work from office/home" id="place">
+         <br>
+        <br>
+        <br>
+        <input type="text" placeholder="no of openings" id="openings">
+        <br>
+       <br>
+       <br>
+        <input type="text" placeholder="Contact" id="contact">
+        
+        </form>
+        <button onclick="st()">submit</button>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-database.js"></script>
+<script>
+    const firebaseConfig = {
+    apiKey: "AIzaSyCL6MTe2gKxU-FxgUvNQItE_9YkZ6DD_rg",
+    authDomain: "firstproject-ad219.firebaseapp.com",
+    projectId: "firstproject-ad219",
+    storageBucket: "firstproject-ad219.appspot.com",
+    messagingSenderId: "109877873417",
+    appId: "1:109877873417:web:2cc95371fe8f9d2e1321d8",
+    measurementId: "G-094ZRQZ37X"
+  };
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+    </script>
+<script>
+ function st(){
+ 
+     
+     var m1=document.getElementById("name").value;
+     
+     var m2=document.getElementById("salary").value;
+     var m3=document.getElementById("part").value;
+     
+     var m4=document.getElementById("place").value;
+     var m5=document.getElementById("openings").value;
+     var m6=document.getElementById("contact").value;
+    firebase.database().ref('logindetails').child("employement").push().set(
+        {
+   name:m1,
+   salary:m2,
+   part:m3,
+   place:m4,
+   openings:m5,
+   contact:m6
+
+    }
+    );
+    alert("job added to dashboard you can check there :)");
+}
+
+
+
+
+
+ 
+</script>
+</body>
+</html>

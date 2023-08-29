@@ -1,0 +1,262 @@
+<html>
+<head>
+    <title>DASHBOARD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+
+ul li {
+  background: #ffe5e5;
+  margin: 5px;
+  
+}
+
+ul {
+  background: #3399ff;
+  padding: 20px;
+
+ 
+}
+
+
+body {
+    margin: 0 0 55px 0;
+}
+
+.nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 55px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    display: flex;
+    overflow-x: auto;
+}
+
+.nav__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    min-width: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: sans-serif;
+    font-size: 13px;
+    color: #444444;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.nav__link:hover {
+    background-color: #eeeeee;
+}
+
+.nav__link--active {
+    color: #009578;
+}
+
+.nav__icon {
+    font-size: 18px;
+}
+
+        body{
+            background-color: pink;
+        }
+        .noc{
+            border-style:groove;
+            border-color:rgba(red, green, blue, alpha)
+           
+        }
+        .noc{
+            background-color: skyblue;
+            border-color:purple;
+            margin-top: 50;
+margin-left: 35;
+margin-bottom: 100;
+margin-right: 35;
+text-align:center;
+    border-radius: 35px;
+        }
+
+
+        .M{
+            background-color:skyblue;
+    border-style:ridge;
+    text-align:center; 
+    border-style:inset;
+    border-color:rgb(#ff00007c, rgb(132, 230, 132), rgb(20, 20, 70));
+    text-align:center;
+    border-style:inset;
+    background-image: url(hg.gif);
+background-color:skyblue;
+
+font-family: Arial, Helvetica, sans-serif;
+
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  box-shadow: 5px 5px 8px orangered, 10px 10px 8px lightgray,10px 10px 8px green;
+}
+
+
+@font-face {
+   font-family: myFirstFont;
+   src: url(sansation_light.woff);
+}
+
+* {
+   font-family: myFirstFont;
+}
+
+
+    </style>
+
+</head>
+<body>
+  
+    
+    <div  class="M">
+        <h1 ><font color="yellow">JOB FINDER</font></h1>
+    
+      </div>
+
+
+    <nav class="nav">
+        <a href="hiring.html" class="nav__link">
+            <i style="font-size:24px" class="fa">&#xf156;</i>
+        <span class="nav__text">Hire Employee</span>
+        </a>
+
+        <a href="taker.html" class="nav__link">
+            <i style="font-size:24px" class="fa">&#xf2bb;</i>
+
+          <span class="nav__text">DASHBOARD</span>
+        </a>
+        <a href="homepage.html" class="nav__link">
+            <i class="fa fa-home" style="font-size:30px"></i>
+          <span class="nav__text" >HOME</span>
+        
+        </a>
+      </nav>
+
+
+
+
+
+
+
+
+
+
+
+ <div >
+<ul id="list" class="noc">
+    
+</ul>
+</div>
+<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-database.js"></script>
+    <script>
+          const firebaseConfig = {
+    apiKey: "AIzaSyCL6MTe2gKxU-FxgUvNQItE_9YkZ6DD_rg",
+    authDomain: "firstproject-ad219.firebaseapp.com",
+    projectId: "firstproject-ad219",
+    storageBucket: "firstproject-ad219.appspot.com",
+    messagingSenderId: "109877873417",
+    appId: "1:109877873417:web:2cc95371fe8f9d2e1321d8",
+    measurementId: "G-094ZRQZ37X"
+  };
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+    </script>
+    <script>
+
+        var stdNo=0;
+        function addItemsToList(name,salary,part,place,openings,contact){
+            var ul=document.getElementById('list');
+            var header=document.createElement('h2');
+            var _name=document.createElement('li');
+            var _salary=document.createElement('li');
+            var _part=document.createElement('li');
+            var _place=document.createElement('li');
+            var _openings=document.createElement('li');
+            var _contact=document.createElement('li');
+
+            header.innerHTML='<hr><hr><i class="fa fa-user" style="font-size:36px;color:red"></i><br>job:   '+(++stdNo)
+          _name.innerHTML='JOB NAME:'+name;
+          _salary.innerHTML='SALARY:'+salary;
+          _part.innerHTML='JOB TYPE:'+part;
+          _place.innerHTML='PLACE(WFH/OFFICE):'+place;
+          _openings.innerHTML='OPENINGS:'+openings;
+          _contact.innerHTML='CONTACT:'+contact;
+          
+          ul.appendChild(header);
+          ul.appendChild(_name);
+          ul.appendChild(_salary);
+          ul.appendChild(_part);
+          ul.appendChild(_place);
+          ul.appendChild(_openings);
+          ul.appendChild(_contact);
+                }
+                function FetchAllData()
+                {
+
+
+
+    firebase.database().ref('logindetails').child("employement").once('value',function(snapshot){
+    snapshot.forEach(
+function(ChildSnapshot)
+{
+    let n =ChildSnapshot.val().name;
+    let s =ChildSnapshot.val().salary;
+    
+    let p =ChildSnapshot.val().part;
+    let pl =ChildSnapshot.val().place;
+    let o =ChildSnapshot.val().openings;
+    let c=ChildSnapshot.val().contact;
+    addItemsToList(n,s,p,pl,o,c);
+    
+}
+    );
+
+    
+});
+
+
+                    
+                 
+
+
+                }
+window.onload(FetchAllData())
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+        
+
+
+</body>
+</html>
+

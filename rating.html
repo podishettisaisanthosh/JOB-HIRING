@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>rating page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html,body{
+  display: grid;
+  height: 100%;
+  place-items: center;
+  text-align: center;
+  background: #000;
+}
+.container{
+  position: relative;
+  width: 400px;
+  background: #111;
+  padding: 20px 30px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.container .post{
+  display: none;
+}
+.container .text{
+  font-size: 25px;
+  color: #666;
+  font-weight: 500;
+}
+.container .edit{
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+  cursor: pointer;
+}
+.container .edit:hover{
+  text-decoration: underline;
+}
+.container .star-widget input{
+  display: none;
+}
+.star-widget label{
+  font-size: 40px;
+  color: #444;
+  padding: 10px;
+  float: right;
+  transition: all 0.2s ease;
+}
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label{
+  color: #fd4;
+}
+input:checked ~ label{
+  color: #fd4;
+}
+input#rate-5:checked ~ label{
+  color: #fe7;
+  text-shadow: 0 0 20px #952;
+}
+#rate-1:checked ~ form header:before{
+  content: "I just hate it ";
+}
+#rate-2:checked ~ form header:before{
+  content: "I don't like it ";
+}
+#rate-3:checked ~ form header:before{
+  content: "It is awesome ";
+}
+#rate-4:checked ~ form header:before{
+  content: "I just like it ";
+}
+#rate-5:checked ~ form header:before{
+  content: "I just love it ";
+}
+.container form{
+  display: none;
+}
+input:checked ~ form{
+  display: block;
+}
+form header{
+  width: 100%;
+  font-size: 25px;
+  color: #fe7;
+  font-weight: 500;
+  margin: 5px 0 20px 0;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+form .textarea{
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+}
+form .textarea textarea{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #eee;
+  border: 1px solid #333;
+  background: #222;
+  padding: 10px;
+  font-size: 17px;
+  resize: none;
+}
+.textarea textarea:focus{
+  border-color: #444;
+}
+form .btn{
+  height: 45px;
+  width: 100%;
+  margin: 15px 0;
+}
+form .btn button{
+  height: 100%;
+  width: 100%;
+  border: 1px solid #444;
+  outline: none;
+  background: #222;
+  color: #999;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form .btn button:hover{
+  background: #1b1b1b;
+}
+ul li {
+  background: #ffe5e5;
+  margin: 5px;
+  
+}
+
+ul {
+  background: #3399ff;
+  padding: 20px;
+}
+h3{
+    color:white
+}
+  </style>
+  <body>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-database.js"></script>
+<script>
+    const firebaseConfig = {
+    apiKey: "AIzaSyCL6MTe2gKxU-FxgUvNQItE_9YkZ6DD_rg",
+    authDomain: "firstproject-ad219.firebaseapp.com",
+    projectId: "firstproject-ad219",
+    storageBucket: "firstproject-ad219.appspot.com",
+    messagingSenderId: "109877873417",
+    appId: "1:109877873417:web:2cc95371fe8f9d2e1321d8",
+    measurementId: "G-094ZRQZ37X"
+  };
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+    </script>
+    <div class="container">
+      <div class="post">
+        <div class="text">Thanks for rating us!</div>
+        <div class="edit">New Response</div>
+      </div>
+      <h3 >Here you can give feedback(rating) for our app  so that we can improve better</h3>
+      <div class="star-widget">
+        <input type="radio" name="rate" id="rate-5" onclick="if(this.checked){rate5()}">
+        <label for="rate-5" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-4" onclick="if(this.checked){rate4()}">
+        <label for="rate-4" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-3" onclick="if(this.checked){rate3()}">
+        <label for="rate-3" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-2" onclick="if(this.checked){rate2()}">
+        <label for="rate-2" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-1" onclick="if(this.checked){rate1()}">
+        <label for="rate-1" class="fas fa-star"></label>
+        <form action="#">
+          <header></header>
+          <div>
+            <textarea cols="30" placeholder="explain in your words" id="textfield1"></textarea>
+          </div>
+          <div class="btn">
+            <button type="submit" >Post</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div >
+        <ul id='list' class="noc">
+            
+        </ul>
+    <script>
+      
+      const btn = document.querySelector("button");
+      const post = document.querySelector(".post");
+      const widget = document.querySelector(".star-widget");
+      const editBtn = document.querySelector(".edit");
+      var arr=[]
+      arr[0]=0
+      
+
+      btn.onclick = ()=>{
+        
+alert("review submitted")
+var ta=document.getElementById("textfield1").value;
+          
+          firebase.database().ref('logindetails').child("rating").push().set(
+        {
+           rev:ta,
+           rating:arr[arr.length-1]
+    }
+    );
+        widget.style.display = "none";
+        post.style.display = "block";
+        editBtn.onclick = ()=>{
+          widget.style.display = "block";
+          post.style.display = "none";
+
+        }
+        
+        return false;
+
+      }
+
+      function rate5(){
+        arr.push(5);
+}
+
+function rate4(){
+        
+    arr.push(4);
+    }
+    function rate3(){
+        
+        arr.push(3);
+    }
+    function rate2(){
+        
+        arr.push(2);
+    }
+    function rate1(){
+        
+        arr.push(1);
+    }
+   
+
+
+       
+
+        
+    </script>
+ <script>
+      
+    var stdNo=0;
+    function addItemsToList(rev,rating){
+        var ul=document.getElementById('list');
+        var header=document.createElement('h2');
+        var _rev=document.createElement('li');
+        var _rating=document.createElement('li');
+
+        header.innerHTML='REVIEW:'+(++stdNo)
+      _rating.innerHTML='RATING:'+rating;
+      _rev.innerHTML='RATING:'+rev;
+     
+      
+      ul.appendChild(header);
+      ul.appendChild(_rev);
+      ul.appendChild(_rating);
+      
+            }
+            function FetchAllData(){
+                firebase.database().ref('logindetails').child("rating").once('value',function(snapshot){
+snapshot.forEach(
+function(ChildSnapshot)
+{
+let i =ChildSnapshot.val().rev;
+let r =ChildSnapshot.val().rating;
+
+
+
+addItemsToList(i,r);
+
+}
+);
+
+
+});
+
+
+}
+
+            
+window.onload(FetchAllData())
+            
+</script> 
+  </body>
+</html>
