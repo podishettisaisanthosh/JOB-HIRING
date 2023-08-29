@@ -1,0 +1,323 @@
+<html>
+<head>
+    <title>HOME PAGE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+
+
+
+
+
+body {
+    margin: 0 0 55px 0;
+    
+}
+
+.nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 55px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    display: flex;
+    overflow-x: auto;
+}
+
+.nav__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    min-width: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: sans-serif;
+    font-size: 13px;
+    color: #444444;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.nav__link:hover {
+    background-color: #eeeeee;
+}
+
+.nav__link--active {
+    color: #009578;
+}
+
+.nav__icon {
+    font-size: 18px;
+}
+
+        body{
+            background-color: pink;
+            background-image: url(bgimg.jpg);
+        }
+        .noc{
+            border-style:groove;
+            border-color:rgba(red, green, blue, alpha)
+           
+        }
+        .noc{
+            background-color: skyblue;
+            border-color:purple;
+            margin-top: 50;
+margin-left: 35;
+margin-bottom: 100;
+margin-right: 35;
+text-align:center;
+    border-radius: 35px;
+        }
+
+
+        .M{
+            background-color:skyblue;
+    border-style:ridge;
+    text-align:center;
+    border-style:inset;
+    border-color:rgb(#ff00007c, rgb(132, 230, 132), rgb(20, 20, 70));
+    text-align:center;
+    border-style:inset;
+    background-image: url(hg.gif);
+background-color:skyblue;
+
+font-family: Arial, Helvetica, sans-serif;
+
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  box-shadow: 5px 5px 8px orangered, 10px 10px 8px lightgray,10px 10px 8px green;
+}
+
+
+@font-face {
+   font-family: myFirstFont;
+   src: url(sansation_light.woff);
+}
+
+* {
+   font-family: myFirstFont;
+}
+.hm1{
+    border-style:dotted;
+    background-color:aquamarine;
+    border-color: brown;
+    border-radius: 40px;
+    align-content: center;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+.hm2{
+    border-style:double;
+    background-color:greenyellow;
+    border-color: magenta;
+    text-align: center;
+    align-content: center;
+  
+}
+.hm3{
+    border-style:double;
+    background-color:greenyellow;
+    border-color: magenta;
+    text-align: center;
+    align-content: center;
+  
+}
+.hm4{
+    border-style:double;
+    background-color:greenyellow;
+    border-color: magenta;
+    text-align: center;
+    align-content: center;
+  
+}
+.hm5{
+    border-style:solid;
+    background-color:greenyellow;
+    border-color: magenta;
+    text-align: center;
+    align-content: center;
+  
+}
+.hm6{
+    border-style:double;
+    background-color:greenyellow;
+    border-color:mediumvioletred;
+    text-align: center;
+    align-content: center;
+  
+}
+.adminss{
+    color:white
+}
+    </style>
+
+</head>
+<body >
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-database.js"></script>
+     
+<script>
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyCL6MTe2gKxU-FxgUvNQItE_9YkZ6DD_rg",
+        authDomain: "firstproject-ad219.firebaseapp.com",
+        projectId: "firstproject-ad219",
+        storageBucket: "firstproject-ad219.appspot.com",
+        messagingSenderId: "109877873417",
+        appId: "1:109877873417:web:2cc95371fe8f9d2e1321d8",
+        measurementId: "G-094ZRQZ37X"
+      };
+    
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <div  class="M">
+        <h1 ><font color="yellow">HOME PAGE</font></h1>
+    
+      </div>
+    <nav class="nav">
+        <a href="hiring.html" class="nav__link">
+            <i style="font-size:24px" class="fa">&#xf156;</i>
+            <span class="nav__text">Hire Employee</span>
+        </a>
+
+        <a href="taker.html" class="nav__link">
+            <i style="font-size:24px" class="fa">&#xf2bb;</i>
+
+          <span class="nav__text">DASHBOARD</span>
+        </a>
+        <a href="homepage.html" class="nav__link">
+            <i class="fa fa-home" style="font-size:30px"></i>
+          <span class="nav__text" >HOME</span>
+        
+        </a>
+      </nav>
+      <hr>
+      <marquee><font color="white" id="newupdates">new updates soon</font></marquee>
+      <hr>
+      <span id="admins" class="adminss"></span>
+      <div class="hm1">
+      
+       
+            <fieldset style="padding:20px;border:1px solid silver"><legend style="background-color:silver;color:white;">REFER</legend>
+                <aside>
+                
+                <article style="background-color:green;box-shadow:5px 5px gray;color:white;padding:10px;;border:2px solid black">
+                <br><a href="file:///D:/project/referlancer/index.html">REFER AND EARN MONEY</a>
+             
+                </details>
+                </article></aside>
+                </fieldset>
+                <fieldset style="padding:20px;border:1px solid red"><legend style="background-color:red;color:white;">CUSTOMER CARE</legend>
+                    <aside>
+                    
+                    <article style="background-color:yellow;box-shadow:5px 5px gray;color:black;padding:10px;;border:2px solid black">
+                    <br><a href="file:///D:/project/socialmedia.html">CLICK HERE TO CONTACT US</a>
+                   
+                    </details>
+                    </article></aside>
+                    </fieldset>
+                   
+                   
+                        <a name="t4"></a>
+                       
+                        <fieldset style="padding:20px;border:1px solid #E5E4E2"><legend style="background-color:#E5E4E2;color:black;">CHATBOT</legend>
+
+                            <aside>
+                            <article style="background-color:#AF50C7;box-shadow:5px 5px gray;color:white;padding:10px;;border:2px solid black">
+                                <br>
+                                <a href="D:\all files\project\chatbot.html">YOU WANT ANY HELP OR DO YOU HAVE ANY PROBLEMS CLICK HERE</a>
+                        </article></aside>
+                            </fieldset>
+                            <fieldset style="padding:20px;border:1px solid orange"><legend style="background-color:orange;color:black;">Personal Info</legend>
+
+                                <aside>
+                                <article style="background-color:orange;box-shadow:5px 5px gray;color:white;padding:10px;;border:2px solid brown">
+                                    <br>
+                                    <a href="D:\all files\project\personal.html">Here you can store your personal information (like password or usernames) 100%secure</a>
+                            </article></aside>
+                                </fieldset>
+                                <fieldset style="padding:20px;border:1px solid gold"><legend style="background-color:gold;color:white;">CALCULATOR</legend>
+                                    <a href="lon.html">
+                                    <aside>
+                                    <article style="background-color:brown;box-shadow:5px 5px gray;color:white;padding:10px;;border:2px solid black">
+                                      'HERE YOU CAN CALCULATE YOUR LOAN AMOUNT(INTREST RATE/PER MONTH)'
+                                    </article><aside>
+                                    </a>
+                                    </fieldset>
+                                <fieldset style="padding:20px;border:1px solid pink"><legend style="background-color:pink;color:black;">REVIEW US</legend>
+
+                                    <aside>
+                                    <article style="background-color:pink;box-shadow:5px 5px gray;color:white;padding:10px;;border:2px solid brown">
+                                        <br>
+                                        <a href="file:///D:/project/rating.html?#">HERE YOU CAN RATE AND REVIEW ABOUT OUR APP</a>
+                                </article></aside>
+                                    </fieldset>
+                                    <fieldset style="padding:20px;border:1px solid #b9f2ff"><legend style="background-color:#b9f2ff;color:black;">LOGOUT</legend>
+                                        <aside>
+                                        <article style="background-color:cyan;box-shadow:5px 5px gray;color:black;padding:10px;;border:2px solid black">
+                                        </details><br>
+                                        <a href="file:///D:/project/log.html">BY CLICKING HERE YOU GO TO LOG IN PAGE</a>
+                                        
+                                        </article></aside>
+                                        </fieldset>
+
+    </div>  
+</div>
+<script>
+     firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    
+    var uid = user.uid;
+    firebase.database().ref('logindetails').child(user.uid).once("value").then(function(snapshot)
+    {
+document.getElementById("admins").innerHTML="Hi"+" "+snapshot.val().username+"   :)";
+
+    });
+  
+  } else {
+   
+  }
+});
+
+</script>
+<script>
+setInterval(ss,300)
+    function ss(){
+        c=document.getElementById("newupdates");
+        if(c.style.color=="black"){
+            c.style.color="green"
+        }else if(c.style.color=="green"){
+            c.style.color="brown"
+        }else if(c.style.color=="brown"){
+            c.style.color="violet"
+        }else if(c.style.color=="violet"){
+            c.style.color="red"
+        }else if(c.style.color=="red"){
+            c.style.color="pink"
+        }else if(c.style.color=="pink"){
+            c.style.color="white"
+        }else if(c.style.color=="white"){
+            c.style.color="grey"
+        }else if(c.style.color=="grey"){
+            c.style.color="yellow"
+        }else if(c.style.color=="yellow"){
+            c.style.color="skyblue"
+        }else if(c.style.color=="skyblue"){
+            c.style.color="purple"
+        }else if(c.style.color=="purple"){
+            c.style.color="black"
+        }else{
+            c.style.color="black";
+        }
+    }
+</script>
+</body>
+</html>

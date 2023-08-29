@@ -1,0 +1,72 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="login.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <title>Sign up</title>
+</head>
+<body>
+  <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-database.js"></script>
+  <script>
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCL6MTe2gKxU-FxgUvNQItE_9YkZ6DD_rg",
+    authDomain: "firstproject-ad219.firebaseapp.com",
+    projectId: "firstproject-ad219",
+    storageBucket: "firstproject-ad219.appspot.com",
+    messagingSenderId: "109877873417",
+    appId: "1:109877873417:web:2cc95371fe8f9d2e1321d8",
+    measurementId: "G-094ZRQZ37X"
+  };
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  <div class="main">
+    <p class="sign" align="center">Sign up</p>
+    <form class="form1">
+      <input class="un " type="text" align="center" placeholder="Email" id="n">
+      <input  type="text" class="pass" align="center" placeholder="username" id="username">
+      <input class="pass" type="password" align="center" placeholder="Password" id="p">
+      
+   
+      </form>
+      <button class="submit" onclick="ihihi()" >Sign up</button>
+    
+     
+     <p>Already have account? Log in below</p> <a class="submit" href="log.html" align="center">LOG in</a>  
+    </div>
+    <script>
+    
+      function ihihi(){
+          var e1=document.getElementById("n").value;
+        var p1=document.getElementById("p").value;
+        var users=document.getElementById("username").value;
+
+                firebase.auth().createUserWithEmailAndPassword(e1,p1)
+        .then((userCredential) => {
+         
+          var user = userCredential.user;
+          firebase.database().ref('logindetails').child(user.uid).set({
+         email:e1,
+         password:p1,
+         username:users
+          });
+          
+          setTimeout(function(){ window.location.replace('hiring.html') }, 3000);
+        })
+        .catch((error) => {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+         
+        });
+      }
+      
+      </script>
+</body>
+
+</html>
